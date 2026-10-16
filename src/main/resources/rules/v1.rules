@@ -1,0 +1,9 @@
+# Synthetic personal-loan program, baseline rules.
+version: 2026.1
+D01 | DECLINE | creditScore < 580                         | Credit score below program minimum
+D02 | DECLINE | bankruptcyLast7Years == 1                 | Bankruptcy within the last seven years
+D03 | DECLINE | debtToIncome > 0.50                       | Debt-to-income ratio too high
+D04 | DECLINE | openDelinquencies >= 3                    | Too many accounts currently delinquent
+R01 | REFER   | debtToIncome > 0.43 and creditScore < 700 | Elevated debt-to-income with near-prime score
+R02 | REFER   | employmentMonths < 12                     | Limited length of employment
+R03 | REFER   | loanToIncome > 0.35                       | Requested amount high relative to income

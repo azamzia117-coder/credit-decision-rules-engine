@@ -1,0 +1,15 @@
+server:
+  port: ${SERVER_PORT:8082}
+
+spring:
+  application:
+    name: credit-decision-rules-engine
+
+decisioning:
+  active-version: ${DECISIONING_ACTIVE_VERSION:2026.1}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
